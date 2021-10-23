@@ -13,6 +13,12 @@
                 font-family: Questrial;
                 color: whitesmoke;
                 background-image: url("Repeat\ Grid\ 14.png");
+                overflow-x: hidden;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            body::-webkit-scrollbar {
+                display: none;
             }
             p, h1, h3 {
                 text-align: center;               
@@ -28,11 +34,10 @@
                 margin-bottom: 6%;
             }
             .center {
-                position: fixed;
-                top: 10%;
-                left: 0;
-                width: 100%;
-                height: 60%;
+                margin-top: 5%;
+                margin-left: -1%;
+                width: 101vw;
+                height: 60vh;
                 min-width: 1280px;
                 min-height: 432px;
                 background-color: #df8423e5;
@@ -104,7 +109,7 @@
                 <div class="boxes">
                     <img src="time-management.png" alt="Time management">
                     <h3 style="font-size: max(16.92px, 2.35vh);">THE RESEARCH</h3>
-                    <div style="padding: 0% 7% 0% 7%">
+                    <div style="padding: 0% 6.5% 0% 6.5%">
                         <p style="font-size: max(14.4px, 2vh);"> This study’s findings can mitigate the time management problems encountered by students 
                             under an online learning setup. The application has the potential to reduce stress and anxiety, meanwhile, enhancing the 
                             learners’ productivity in online learning.</p>
