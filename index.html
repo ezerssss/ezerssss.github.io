@@ -8,9 +8,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <style>
-            @media only screen and (max-device-width: 1280px){
-                html, body { display: none; }
-            }
             body {
                 background-color: white; 
                 font-family: Questrial;
@@ -36,7 +33,7 @@
                 margin-top: 10%;
                 margin-bottom: 6%;
             }
-            .center {
+            #center {
                 margin-top: 5%;
                 margin-left: -1%;
                 width: 101vw;
@@ -91,7 +88,7 @@
         </style>
     </head>   
     <body>
-        <div class="center">
+        <div id="center">
             <div class="top">
                 <h1 style="font-size: max(36px, 5vh); letter-spacing: max(7.2px, 1vh); font-weight: bold;">EARLYBIRD</h1>
                 <p style="font-size: max(15.12px, 2.1vh); margin-top: 3%;">EarlyBird is an application made by PSHS-CVisC scholars. 
@@ -128,5 +125,16 @@
                 </div>
             </div>           
         </div>
+        <div id="mobile" style="display: none">
+            <h1 style="color: black">No support for mobile or your screen size.</h1>
+        </div>
+        
+        <script>
+            var mediasize = window.matchMedia("(max-device-width: 1279px)");
+            if (mediasize.matches){
+                document.getElementById("center").style.display = "none";
+                document.getElementById("mobile").style.display = "block";
+            }
+        </script>
     </body>
 </html>
