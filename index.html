@@ -27,50 +27,52 @@
                 margin-top: 10%;
                 margin-bottom: 6%;
             }
-            .top {
-                height: 50%;
-                width: 50%;
-                padding-top: 2.5%;
-                line-height: 4vh;
-                margin-left: 23.35vw;
-            }
             .center {
                 position: fixed;
                 top: 10%;
                 left: 0;
                 width: 100%;
                 height: 60%;
+                min-width: 1280px;
+                min-height: 432px;
                 background-color: #df8423e5;
             }
+            .top {
+                height: 50%;
+                width: 50%;
+                padding-top: 2.5%;
+                line-height: max(28.8px, 4vh);
+                margin-left: max(298.88px, 23.35vw);
+            }         
             #box-container {
                 display: flex; 
                 width: 51.5%;
                 height: 100%;
-                margin-left: 14.55vw;
+                margin-left: max(186.24px, 14.55vw);
             }
             .boxes{
                 background-color: #ffb300; 
-                width: 40%; 
+                max-width: 40%; 
+                max-height: 75%;  
                 min-width: 40%;
-                height: 75%; 
-                min-height: 75%;
+                min-height: 75%;                            
                 margin-right: 4.5%;
                 margin-top: 1.5%;
-                box-shadow: 1.2vh 1.2vh #b98200e1;
+                box-shadow: max(8.64px, 1.2vh) max(8.64px, 1.2vh) #b98200e1;
                 border-radius: 5%;
                 display: inline;
-                line-height: 2.5vh;
+                line-height: max(18px, 2.5vh);
             }
             .btn {
                 background-color: #f35010e5;
                 border: none;
                 color: white;
-                min-width: 35vh;
-                min-height: 7vh;
-                max-width: 35vh;
-                max-height: 7vh;
+                min-width: max(252px, 35vh);
+                min-height: max(50.4px, 7vh);
+                max-width: max(252px, 35vh);
+                max-height: max(50.4px, 7vh);
                 cursor: pointer;
-                font-size: 2.7vh;
+                font-size: max(19.44px, 2.7vh);
                 border-radius: 5%;
                 margin-left: 32.5%;
                 margin-top: 1%;
@@ -83,8 +85,8 @@
     <body>
         <div class="center">
             <div class="top">
-                <h1 style="font-size: 5vh; letter-spacing: 1vh; font-weight: bold;">EARLYBIRD</h1>
-                <p style="font-size: 2.1vh; margin-top: 3%;">EarlyBird is an application made by PSHS-CVisC scholars. 
+                <h1 style="font-size: max(36px, 5vh); letter-spacing: max(7.2px, 1vh); font-weight: bold;">EARLYBIRD</h1>
+                <p style="font-size: max(15.12px, 2.1vh); margin-top: 3%;">EarlyBird is an application made by PSHS-CVisC scholars. 
                 It's a utility software <br> for Moodle/KHub that automatically gets your assignments and quizzes.</p>
                 <a href="EarlyBirdSetup-V1.3.6.zip">
                     <button class="btn"><i class="fa fa-download"></i> Download for Free</button>
@@ -93,26 +95,26 @@
             <div id="box-container">
                 <div class="boxes">                    
                     <img src="programmer.png" alt="programmer">
-                    <h3 style="font-size: 2.35vh;">THE DEVELOPERS</h3>
+                    <h3 style="font-size: max(16.92px, 2.35vh);">THE DEVELOPERS</h3>
                     <div style="padding: 0% 7% 0% 7%">
-                        <p style="font-size: 2vh;"> Meet Andry Tumacole, Basil  Mendoza, and Ezra Magbanua! They are a group of grade 12 scholars that
+                        <p style="font-size: max(14.4px, 2vh);"> Meet Andry Tumacole, Basil  Mendoza, and Ezra Magbanua! They are a group of grade 12 scholars that
                              have a passion for computer science and helping their fellow scholars.</p>
                     </div>                                    
                 </div>
                 <div class="boxes">
                     <img src="time-management.png" alt="Time management">
-                    <h3 style="font-size: 2.35vh;">THE RESEARCH</h3>
+                    <h3 style="font-size: max(16.92px, 2.35vh);">THE RESEARCH</h3>
                     <div style="padding: 0% 7% 0% 7%">
-                        <p style="font-size: 2vh;"> This study’s findings can mitigate the time management problems encountered by students 
+                        <p style="font-size: max(14.4px, 2vh);"> This study’s findings can mitigate the time management problems encountered by students 
                             under an online learning setup. The application has the potential to reduce stress and anxiety, meanwhile, enhancing the 
                             learners’ productivity in online learning.</p>
                     </div>   
                 </div>
                 <div class="boxes">
                     <img src="questions.png" alt="Guide">
-                    <h3 style="font-size: 2.35vh;">THE GUIDE</h3>
+                    <h3 style="font-size: max(16.92px, 2.35vh);">THE GUIDE</h3>
                     <div style="padding: 0% 7% 0% 7%">
-                        <p style="font-size: 2vh;"> Not sure what to do? Here's a quick guide of the step-by-step process on how to download the app. 
+                        <p style="font-size: max(14.4px, 2vh);"> Not sure what to do? Here's a quick guide of the step-by-step process on how to download the app. 
                             It also serves as a manual for different features. Happy managing!<br><br><a href="https://tinyurl.com/j3h7e26s" target="blank">https://tinyurl.com/j3h7e26s</a></p>
                     </div>   
                 </div>
