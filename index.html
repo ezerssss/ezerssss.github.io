@@ -8,135 +8,367 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <style>
-            body {
-                background-color: white; 
+
+            body {           
+                background-color: #F1F1F1;
                 font-family: Questrial;
-                color: whitesmoke;
-                background-image: url("Repeat\ Grid\ 14.png");
-                overflow-x: hidden;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
             }
-            body::-webkit-scrollbar {
-                display: none;
-            }
-            p, h1, h3 {
-                text-align: center;               
-            }
-            img {
-                max-width: 35%;
-                max-height: 35%;
-                min-width: 35%;
-                min-width: 35%;
-                display: block;
-                margin-left: 32.5%;
-                margin-top: 10%;
-                margin-bottom: 6%;
-            }
-            #center {
-                margin-top: 5%;
-                margin-left: -1%;
-                width: 101vw;
-                height: 60vh;
+
+            #container {
+                min-height: 720px;
                 min-width: 1280px;
-                min-height: 432px;
-                background-color: #df8423e5;
+                display: flex;
+                width: 99vw;
+                height: 97vh;
             }
-            .top {
-                height: 50%;
-                width: 100%;
-                padding-top: 2.5%;
-                line-height: max(28.8px, 4vh);
-            }         
-            #box-container {
-                display: flex; 
-                width: 51.5%;
+            
+            #half {
+                display: flex;
+                width: 50%;
                 height: 100%;
-                margin-left: max(186.24px, 14.55vw);
             }
-            .boxes{
-                background-color: #ffb300; 
-                max-width: 40%; 
-                max-height: 75%;  
-                min-width: 40%;
-                min-height: 75%;              
-                margin-left: 1.6%;              
-                margin-right: 4.5%;
-                margin-top: 2.5%;
-                box-shadow: max(8.64px, 1.2vh) max(8.64px, 1.2vh) #b98200e1;
-                border-radius: 5%;
-                display: inline;
-                line-height: max(18px, 2.5vh);
-            }
-            .btn {
-                background-color: #f35010e5;
+
+            #donate {
+                transform: rotate(-90deg);
+                margin-top: 850%;
+                margin-left: -1%;
+                font-weight: 500;
+                font-size: 2vh;
                 border: none;
-                color: white;
-                min-width: max(252px, 35vh);
-                min-height: max(50.4px, 7vh);
-                max-width: max(252px, 35vh);
-                max-height: max(50.4px, 7vh);
                 cursor: pointer;
-                font-size: max(19.44px, 2.7vh);
+                width: 15vh;
+            }
+
+            #donate:hover {
+                border-radius: 3.7vh;
+                box-shadow:  -.462vh -.548vh .1vh #FAFAFA, .462vh .926vh .185vh #DFDBDA;
+            }
+
+            #main {
+                width: 55%;
+                height: auto;
+                margin-left: 30%;
                 border-radius: 5%;
-                margin-top: 1%;
             }
-            a {
-                margin-left: 41%;
+
+            h1 {
+                letter-spacing: .6vh;
             }
-            .btn:hover {
-                background-color: rgb(202, 0, 0);
+
+            #download {
+                background-color: #F1F1F1;
+                border: none;
+                font-size: 2.5vh;
+                border-radius: 3.7vh;
+                display: inline-block;
+                color: #E18829;
+                box-shadow: .462vh .926vh .185vh #DFDBDA, -.462vh -.648vh .185vh #FAFAFA;
+                margin-top: 5%;
+                margin-left: 1%;
+                width: 60%;
+                height: 10%;
+                cursor: pointer;
             }
+
+            #logo {
+                width: 150%;
+                height: auto;
+                border-radius: .926vh;
+            }
+
+            #mobile {
+                display: none;
+                background-image: url("Repeat\ Grid\ 14.png");
+            }
+
+            .side {
+                transform: rotate(90deg);
+                margin-left: 40%;
+                margin-top: 35%;
+                border: none;
+                width: 10vh;
+                font-size: 2vh;
+                cursor: pointer;
+                background-color: #F1F1F1;
+            }
+
+            .side:hover {
+                border-radius: 3.7vh;
+                box-shadow:  .462vh .548vh .185vh #FAFAFA, -.462vh -.926vh .185vh #DFDBDA;
+            }
+
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+            .slides {
+                display: none
+            }
+
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                from {opacity: .75} 
+                to {opacity: 1}
+            }
+
+            @keyframes fade {
+                from {opacity: .75} 
+                to {opacity: 1}
+            }
+
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                min-width: 1280px; /* Full width */
+                min-height: 720px;
+                width: 100vw;
+                height: 100vh; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+            .modal-content {
+                background-color: #F1F1F1;
+                margin-top: 5vh;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 3vh;
+                border: 1px solid #888;
+                width: 35%;
+            }
+
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 4vh;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
         </style>
-    </head>   
+    </head>
     <body>
-        <div id="center">
-            <div class="top">
-                <h1 style="font-size: max(36px, 5vh); letter-spacing: max(7.2px, 1vh); font-weight: bold;">EARLYBIRD</h1>
-                <p style="font-size: max(15.12px, 2.1vh);">EarlyBird is an application made by PSHS-CVisC scholars. 
-                It's a utility software <br> for Moodle/KHub that automatically gets your assignments and quizzes.</p>
-                <a href="EarlyBirdSetup-V1.3.6.zip">
-                    <button class="btn"><i class="fa fa-download"></i> Download for Free</button>
-                </a>
-            </div>         
-            <div id="box-container">
-                <div class="boxes">                    
-                    <img src="programmer.png" alt="programmer">
-                    <h3 style="font-size: max(16.92px, 2.35vh);">THE DEVELOPERS</h3>
-                    <div style="padding: 0% 7% 0% 7%">
-                        <p style="font-size: max(14.4px, 2vh);"> Meet Andry Tumacole, Basil  Mendoza, and Ezra Magbanua! They are a group of grade 12 scholars that
-                             have a passion for computer science and helping their fellow scholars.</p>
-                    </div>                                    
+
+        <div id="container">
+
+            <div id="half">
+                <div style="width: 10%;">
+                    <button id="donate">
+                        <p>DONATE</p>
+                    </button>            
                 </div>
-                <div class="boxes">
-                    <img src="time-management.png" alt="Time management">
-                    <h3 style="font-size: max(16.92px, 2.35vh);">THE RESEARCH</h3>
-                    <div style="padding: 0% 6.5% 0% 6.5%">
-                        <p style="font-size: max(14.4px, 2vh);"> This study’s findings can mitigate the time management problems encountered by students 
-                            under an online learning setup. The application has the potential to reduce stress and anxiety, meanwhile, enhancing the 
-                            learners’ productivity in online learning.</p>
-                    </div>   
-                </div>
-                <div class="boxes">
-                    <img src="questions.png" alt="Guide">
-                    <h3 style="font-size: max(16.92px, 2.35vh);">THE GUIDE</h3>
-                    <div style="padding: 0% 7% 0% 7%">
-                        <p style="font-size: max(14.4px, 2vh);"> Not sure what to do? Here's a quick guide of the step-by-step process on how to download the app. 
-                            It also serves as a manual for different features. Happy managing!<br><br><a href="https://tinyurl.com/j3h7e26s" target="blank" style="margin-left: 0%;">https://tinyurl.com/j3h7e26s</a></p>
-                    </div>   
-                </div>
-            </div>           
-        </div>
-        <div id="mobile" style="display: none">
-            <h1 style="color: black">No support for mobile or your screen size. Please use a computer or contact the developers.</h1>
+                <div style="width: 90%; padding-top: 12%;">
+
+                    <div class="slides fade">
+                        <img id="main" src="earlybird.png">               
+                    </div>
+
+                    <div class="slides fade">
+                        <img id="main" src="earlybird2.png">               
+                    </div>
+
+                    <div style="text-align:center; margin-left: 15%; margin-top: 2%;">
+                        <span class="dot" onclick="currentSlide(1)" style="width: 2vh; height: 2vh;"></span> 
+                        <span class="dot" onclick="currentSlide(2)" style="width: 2vh; height: 2vh;"></span> 
+                    </div>
+                    
+                </div>          
+            </div>
+
+            <div id="half">
+                <div style="width: 55%; margin-left: 7%; margin-top: 26%">
+                    <h1 style="font-size: 7vh; color: #E18829">earlybird</h1>
+                    <p style="font-size: 2.125vh; line-height: 2.78vh; margin-top: -5%;">earlybird is an application made by PSHS-CVisC scholars. It's a utility software
+                    for Moodle/KHub that automatically gets your assignments and quizzes.</p>
+                    <button id="download">Download now <i class="fa fa-download"></i> </button>
+                </div>        
+                <div style="width: 20%; margin-left: 18%; display: flex; flex-direction: column;">
+                    <button id="aboutButton" class="side">
+                        <p>About</p>
+                    </button>
+                    <button id="researchersButton" class="side" style="margin-left: 20%; margin-top: 55%; margin-bottom: 20%; width: 18vh">
+                        <p>Researchers</p>
+                    </button>
+                    <button id="guideButton" class="side">
+                        <p>Guide</p>
+                    </button>
+                </div>        
+            </div>
+
+        </div> 
+
+        <div id="mobile">
+            <p>Sorry! No support for mobile or for your screen size. Please contact the devolopers if you have any questions.</p>
         </div>
         
+        <div id="about" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div style="padding-left: 33%; padding-top: 5%;">
+                    <img src="data-analysis.png" style="width: 50%; height: auto;">
+                </div>
+                
+                <div style="padding-top: 5%;">
+                    <h1 style="color: #E18829; text-align: center; font-size: 4vh;">The Research</h1>
+                    <p style="text-indent: 5%; line-height: 3vh; font-size: 2.1vh;">This study’s findings can help mitigate the time management problems encountered by students under an online learning setup. The application has the potential to reduce stress and anxiety, meanwhile, enhancing the learners’ productivity in online learning.</p>
+                </div> 
+            </div>
+          
+        </div>
+
+        <div id="researchers" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div style="padding-left: 34%; padding-top: 5%;">
+                    <img src="programmer.png" style="width: 50%; height: auto;">
+                </div>
+                
+                <div style="padding-top: 5%;">
+                    <h1 style="color: #E18829; text-align: center; font-size: 4vh;">The Developers</h1>
+                    <p style="text-indent: 5%; line-height: 3vh; font-size: 2.1vh;">Meet Andry Tumacole, Basil Mendoza, and Ezra Magbanua! They are a group of grade 12 scholars that have a passion for computer science and helping their fellow scholars.</p>
+                </div> 
+            </div>
+          
+        </div>
+
+        <div id="guide" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <div style="padding-left: 34%; padding-top: 5%;">
+                    <img src="guide.png" style="width: 50%; height: auto;">
+                </div>
+                
+                <div style="padding-top: 5%;">
+                    <h1 style="color: #E18829; text-align: center; font-size: 4vh;">The Guide</h1>
+                    <p style="text-indent: 5%; line-height: 3vh; font-size: 2.1vh;">Not sure what to do? Here's a quick guide of the step-by-step process on how to download the app. It also serves as a manual for different features. Happy managing!
+                        <br><br>
+                        <p style="text-align: center;">
+                            <a href="https://tinyurl.com/j3h7e26s" target="blank" style="text-align: center;">https://tinyurl.com/j3h7e26s</a>
+                        </p>    
+                    </p>
+                </div> 
+            </div>
+          
+        </div>
+
         <script>
-            var mediasize = window.matchMedia("(max-device-width: 1279px)");
+
+            var mediasize = window.matchMedia("(max-device-width: 1280px)");
             if (mediasize.matches){
-                document.getElementById("center").style.display = "none";
+                document.getElementById("container").style.display = "none";
                 document.getElementById("mobile").style.display = "block";
             }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("slides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                
+                if (slideIndex == 1){slideIndex++;}
+                else {slideIndex = 1}
+                
+                setTimeout(showSlides, 15000);
+            }
+
+            // Get the modal
+            var about = document.getElementById("about");
+            var researchers = document.getElementById("researchers");
+            var guide = document.getElementById("guide");
+
+            var modal = "NA";
+
+
+            // Get the button that opens the modal
+            var aboutButton = document.getElementById("aboutButton");
+            var researchersButton = document.getElementById("researchersButton");
+            var guideButton = document.getElementById("guideButton");
+
+
+            aboutButton.onclick = function() {
+                var span = document.getElementsByClassName("close")[0];
+                about.style.display = "block";
+                modal = about;
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            }
+
+            researchersButton.onclick = function() {
+                var span = document.getElementsByClassName("close")[1];
+                researchers.style.display = "block";
+                modal = researchers;    
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            }
+
+            guideButton.onclick = function() {
+                var span = document.getElementsByClassName("close")[2];
+                guide.style.display = "block";
+                modal = guide;    
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
         </script>
     </body>
 </html>
+
