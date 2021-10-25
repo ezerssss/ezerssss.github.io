@@ -202,7 +202,9 @@
                     <h1 style="font-size: 7vh; color: #E18829">earlybird</h1>
                     <p style="font-size: 2.125vh; line-height: 2.78vh; margin-top: -5%;">earlybird is an application made by PSHS-CVisC scholars. It's a utility software
                     for Moodle/KHub that automatically gets your assignments and quizzes.</p>
-                    <button id="download">Download now <i class="fa fa-download"></i> </button>
+                    <a href="EarlyBirdSetup-V1.3.6.zip">
+                        <button id="download">Download now <i class="fa fa-download"></i> </button>
+                    </a>            
                 </div>        
                 <div style="width: 20%; margin-left: 18%; display: flex; flex-direction: column;">
                     <button id="aboutButton" class="side">
@@ -298,6 +300,7 @@
             }
             
             function showSlides(n) {
+
                 var i;
                 var slides = document.getElementsByClassName("slides");
                 var dots = document.getElementsByClassName("dot");
@@ -309,12 +312,13 @@
                 for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
+
                 slides[slideIndex-1].style.display = "block";  
                 dots[slideIndex-1].className += " active";
-                
+
                 if (slideIndex == 1){slideIndex++;}
                 else {slideIndex = 1}
-                
+    
                 setTimeout(showSlides, 15000);
             }
 
